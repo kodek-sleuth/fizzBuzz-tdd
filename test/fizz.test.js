@@ -25,4 +25,8 @@ describe('FizzBuzz', () => {
     it('Should return fizzBuzz if number supplied is multiple of both 3 and 5', () => {
         assert(fizzBuzz(15), 'fizzBuzz')
     });
+
+    it('Should return rest if number supplied is not either multiple of 3, 5 or both', () => {
+        assert(fizzBuzz(11), 'rest')
+    });
 });
