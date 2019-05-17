@@ -1,16 +1,34 @@
 {
-  "name": "fizzbuzz",
+  "name": "quick-credit",
   "version": "1.0.0",
-  "description": "",
+  "description": "Fizz Buzz TDD",
   "main": "index.js",
   "scripts": {
     "test": "mocha || true",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls --timeout 1000 -exit"
   },
-  "author": "",
+  "nyc": {
+    "exclude": "app/mainApp.js, api/Models/*.js, api/Settings/*.js" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kodek-sleuth/fizzBuzz-tdd.git"
+  },
+  "author": "Mugerwa Joseph Lumu",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kodek-sleuth/Quick-credit/issues"
+  },
+  "homepage": "https://github.com/kodek-sleuth/Quick-credit#readme",
+  "dependencies": {
+    "nodemon": "^1.18.11"
+  },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.1.4"
+    "coveralls": "^3.0.3",
+    "mocha": "^6.1.4",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^14.1.1"
   }
 }
