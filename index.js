@@ -1,46 +1,60 @@
 
-exports.fizzBuzz = (number) => {
-    while (1 > 0)
-    {
-        // Checking for Empty Values
-        if (number == null)
+class fizzBuzz {
+    constructor (number) {
+        this.number = number;
+    }
+
+    checkNull() {
+        if (this.number == null)
         {
             return 'Enter a number';
         }
+    }
 
+    checkString() {
         // Checking for Strings
-        if (isNaN(number) == true)
+        if (isNaN(this.number) == true)
         {
             return 'Enter only numbers';
         }
+    }
 
-        // Checking for integers
-        if (parseFloat(number) == parseInt(number) == false)
+    checkFloats() {
+        if (parseFloat(this.number) == parseInt(this.number) == false)
         {
             return 'Enter only integers';
         }
+    }
 
-        else
-        {
-            if (number % 15 == 0)
-            {
-                return 'fizzBuzz'
-            }
-                
-            else if (number % 3 == 0) 
-            { 
-                return 'fizz'
-            }
-                
-            else if (number % 5 == 0)
-            {
-                return 'buzz'
-            }
-                
-            else
-            {
-                return 'notFizzBuzz'
-            } 
+    checkFizz() {
+        if (this.number % 3 == 0) 
+        { 
+            return 'fizz'
         }
     }
+
+    checkBuzz() {
+        if (this.number % 5 == 0)
+        {
+            return 'buzz'
+        }
+    }
+
+    checkfizzBuzz() {
+        if (this.number % 15 == 0)
+        {
+            return 'fizzBuzz'
+        }
+    }
+
+    checkRest() {
+        if (this.number % 15 != 0)
+        {
+            return 'rest'
+        }
+    }
+}
+
+module.exports = {
+    fizzBuzz
 }
